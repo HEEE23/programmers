@@ -10,7 +10,7 @@ def solution(n):
     if len(lst) == 0:
         answer = -1
     else:
-        answer = (lst[0]+1)*(lst[0]+1)
+        answer = (lst[0]+1)**2
         
     return answer
 
