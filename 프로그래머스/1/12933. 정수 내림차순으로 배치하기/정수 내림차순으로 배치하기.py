@@ -1,7 +1,7 @@
 def solution(n):
     answer = 0
-    lst = list(map(int, str(n)))
+    lst = list(str(n))
     lst.sort(reverse=True)
     
-    answer = int(''.join(map(str,lst)))
+    answer = int(''.join(lst))
     return answer
