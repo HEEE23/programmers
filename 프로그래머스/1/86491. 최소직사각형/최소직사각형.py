@@ -8,8 +8,6 @@ def solution(sizes):
         x_sizes.append(x)
         y_sizes.append(y)
         
-    print(x_sizes)
-    print(y_sizes)
     for i in range(len(sizes)):
         tmp = 0
         if (x_sizes[i] < y_sizes[i]):
