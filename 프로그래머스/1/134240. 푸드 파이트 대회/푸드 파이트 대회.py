@@ -6,7 +6,7 @@ def solution(food):
             count = int(food[i]/2)
             for j in range(count):
                 answer += str(i)
+    answer_r = answer[::-1]
     answer += '0'
-    for i in range(len(answer)-2,-1,-1):
-        answer += answer[i]
+    answer += answer_r
     return answer
