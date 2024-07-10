@@ -5,12 +5,11 @@ def solution(numbers):
         for j in range(i+1, len(numbers)):
             answer.append(numbers[i] + numbers[j])
             
-    #answer = list(set(answer))
+    #answer = sorted(list(set(answer)))
     lst = []
     for result in answer:
         if result not in lst:
-            lst.append(result)
-            
+            lst.append(result)            
     lst.sort()
     answer = lst
     return answer
