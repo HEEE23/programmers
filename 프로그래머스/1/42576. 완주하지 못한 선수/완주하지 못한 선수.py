@@ -9,7 +9,7 @@ def solution(participant, completion):
     
     dic = {}
     for p in participant:
-        dic[p] = dic.get(p, 0) + 1 
+        dic[p] = dic.get(p, 0) + 1  # 기본값 0
     
     
     for c in completion:
