@@ -2,8 +2,7 @@ def solution(s):
     answer = -1
 
     stack = []
-    stack.append(s[0])
-    for i in range(1,len(s)):
+    for i in range(len(s)):
         if len(stack) > 0:
             if stack[-1] == s[i]:
                 stack.pop(-1)
