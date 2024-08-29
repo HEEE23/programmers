@@ -17,15 +17,8 @@ def solution(want, number, discount):
             else:
                 discount_dic[lst[j]] = 1
         
-        cnt = 0
-        for w in want:
-            if w not in discount_dic:
-                break
-            else:
-                if want_dic[w] <= discount_dic[w]:
-                    cnt += 1
-        
-        if cnt == len(want):
+        # 정현이가 원하는 제품과 수량이 할인하는 날짜와 10일 연속으로 일치하는 경우
+        if want_dic == discount_dic:
             answer += 1
                 
     return answer
