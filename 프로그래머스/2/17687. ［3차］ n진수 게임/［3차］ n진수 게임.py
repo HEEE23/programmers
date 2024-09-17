@@ -7,26 +7,13 @@ def solution(n, t, m, p):
         if len(lst) < t*m:
             s = ''
 
+            NUMBERS = '0123456789ABCDEF'
             n1 = n
             while i > 0:
                 i, mod = divmod(i, n1)
-                if mod == 10:
-                    s += 'A'
-                elif mod == 11:
-                    s += 'B'
-                elif mod == 12:
-                    s += 'C'
-                elif mod == 13:
-                    s += 'D'
-                elif mod == 14:
-                    s += 'E'
-                elif mod == 15:
-                    s += 'F'
-                else:
-                    s += str(mod)
+                s += NUMBERS[mod]
 
             s = s[::-1]
-
             lst.extend(list(s))
         else:
             break
