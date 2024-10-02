@@ -1,15 +1,12 @@
 def solution(prices):
-    answer = []
+    answer = [0] * len(prices)
     
-    queue = []
     for i in range(len(prices)):
-        queue.append(prices[i])
-        answer.append(0)
-        
         for j in range(i+1, len(prices)):
-            answer[i] += 1
-            
-            if prices[j] < prices[i]:
+            if prices[i] <= prices[j]:
+                answer[i] += 1
+            else:
+                answer[i] += 1
                 break
-
+                
     return answer
