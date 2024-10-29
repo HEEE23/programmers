@@ -25,12 +25,10 @@ def solution(number, k):
 
     stack = []
     for n in number:
-        if stack and k > 0:
-            while stack[-1] < n:
-                stack.pop()
-                k -=1
-                if k <= 0 or not stack:
-                    break
+        while stack and k > 0 and (stack[-1] < n):
+            stack.pop()
+            k -= 1
+
         stack.append(n)
     
     answer = ''.join(stack)
