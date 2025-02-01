@@ -11,9 +11,8 @@ def solution(n, works):
     
     while n != 0:
         work = -heapq.heappop(heap)
-        if work != 0:
-            work -= 1
-            heapq.heappush(heap, -work)
+        work -= 1
+        heapq.heappush(heap, -work)
         n -= 1
 
     for h in heap:
