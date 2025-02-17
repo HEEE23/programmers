@@ -19,7 +19,7 @@ def solution(a):
         left_min = dp[0][i-1]
         right_min = dp[1][i+1]
         
-        # 왼쪽 최솟값, 오른쪽 최솟값보다 클 경우
+        # 왼쪽 최솟값, 오른쪽 최솟값보다 클 경우; 가장 작은값
         if left_min > a[i] and right_min > a[i]:
             answer += 1
         # 왼쪽 최솟값보다 작고 오른쪽 최솟값보다 클 경우, 왼쪽 최솟값보다 크고 오른쪽 최솟값보다 작을 경우
