@@ -48,7 +48,6 @@ def solution(play_time, adv_time, logs):
         else:
             if most_view < all_time[i]:
                 most_view = all_time[i]
-                max_time = i - adv_time + 1
-    
+
     answer = int_to_str(max_time)
     return answer
