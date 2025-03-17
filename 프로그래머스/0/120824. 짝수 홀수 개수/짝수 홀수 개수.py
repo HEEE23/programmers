@@ -10,7 +10,6 @@ def solution(num_list):
         else:
             odd += 1
             
-    answer.append(even)
-    answer.append(odd)
+    answer.extend([even, odd])
 
     return answer
