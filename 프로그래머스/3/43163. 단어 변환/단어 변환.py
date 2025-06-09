@@ -1,27 +1,30 @@
 from collections import deque
 def solution(begin, target, words):
-    
     if target not in words:
         return 0
     
     return bfs(begin, target, words)
 
 def bfs(begin, target, words):
-    queue = deque()
-    queue.append([begin, 0])
+    answer = 0
     
+    queue = deque()
+    step = 0
+    queue.append([begin,step])
     while queue:
         now, step = queue.popleft()
-
+        
         if now == target:
-            return step
-
+            answer = step
+            break
+            
         for w in words:
-            count = 0
+            cnt = 0
             for i in range(len(now)):
-                if now[i] != w[i]:
-                    count += 1
+                if w[i] != now[i]:
+                    cnt += 1
+            if cnt == 1:
+                queue.append([w, step+1])
 
-            if count == 1:
-                queue.append([w,step+1])
+    return answer
     
