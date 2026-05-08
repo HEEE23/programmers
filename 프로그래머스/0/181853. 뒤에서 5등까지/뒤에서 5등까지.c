@@ -2,27 +2,33 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-int compare(const void *a, const void *b);
+int compare(const void* a, const void* b){
+    return *(int*)a - *(int*)b;
+}
 
 // num_list_len은 배열 num_list의 길이입니다.
 int* solution(int num_list[], size_t num_list_len) {
     // return 값은 malloc 등 동적 할당을 사용해주세요. 할당 길이는 상황에 맞게 변경해주세요.
     int* answer = (int*)malloc(1);
     
-    int tmp = 0;
-    for(int i = 0; i<=num_list_len; i++){
-        for(int j = i+1; j < num_list_len; j++){
-            if(num_list[i] > num_list[j]){
-                tmp = num_list[i];
-                num_list[i] = num_list[j];
-                num_list[j] = tmp;
-            }
-        }
-    }
+//     int tmp = 0;
+//     for(int i = 0; i<=num_list_len; i++){
+//         for(int j = i+1; j < num_list_len; j++){
+//             if(num_list[i] > num_list[j]){
+//                 tmp = num_list[i];
+//                 num_list[i] = num_list[j];
+//                 num_list[j] = tmp;
+//             }
+//         }
+//     }
     
-    for(int i = 0; i <=4; i++){
+//     for(int i = 0; i <=4; i++){
+//         answer[i] = num_list[i];
+//     }
+    
+    qsort(num_list, num_list_len, sizeof(num_list[0]), compare);
+    for(int i = 0; i <= 4; i++){
         answer[i] = num_list[i];
     }
-    
     return answer;
 }
